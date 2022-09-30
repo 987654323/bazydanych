@@ -1,0 +1,95 @@
+<html>
+<head> </head>
+
+<body>
+    <br>
+	Imie: <input type="text" size="10" id="imie"><br><br>
+	Nazwisko: <input type="text" size="10" id="nazwisko"><br><br>
+	Pesel: <input type="text" size="10" id="pesel"><br><br>
+	
+	<button id="1" onclick="f1()"> Przycisk </button>
+
+	
+<script>
+
+	function f1() {
+	
+	
+		let pesel=document.getElementById("pesel").value;
+		let imie=document.getElementById("imie").value;
+		let nazwisko=document.getElementById("nazwisko").value;
+        console.log(pesel + " " + imie + " " + nazwisko);
+		let rok = pesel.slice(0,2);
+		let wiek=pesel.charAt(2);
+		let miesiac = parseInt(pesel.slice(2,4));
+		if (wiek==2){
+			wiek2="20";
+			miesiac3=miesiac-20;
+		}
+		else{
+			wiek2="19";
+		}
+		
+		
+		
+		
+		let dzien = pesel.slice(4,6);
+		
+		let plec = imie.endsWith("a");
+		let plec2 = nazwisko.endsWith("ska");
+		
+		if (plec == true || plec2 == true){
+			plec3="kobieta";
+		}
+		else{
+			plec3="mezczyzna";
+		}
+		
+		switch(miesiac) {
+		case 1:
+			miesiac2="styczniu";
+			break;
+		case 2:
+			miesiac2="lutym";
+			break;
+		case 3:
+			miesiac2="marcu";
+			break;
+		case 4:
+			miesiac2="kwietniu";
+			break;
+		case 5:
+			miesiac2="maju";
+			break;
+		case 6:
+			miesiac2="czerwcu";
+			break;
+		case 7:
+			miesiac2="lipcu";
+			break;
+		case 8:
+			miesiac2="sierpniu";
+			break;
+		case 9:
+			miesiac2="wrześniu";
+			break;
+		case 10:
+			miesiac2="październiku";
+			break;
+		case 11:
+			miesiac2="listopadzie";
+			break;
+		case 12:
+			miesiac2="grudniu";
+			break;	
+		default:
+			break;
+		}
+		
+		document.write("Urodziłeś się w "+wiek2+rok+" roku w "+miesiac2+" dnia "+dzien+", a twoja plec to: "+plec3+"");
+		
+	}
+	</script>
+</body>
+
+</html>
